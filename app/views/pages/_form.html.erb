@@ -1,0 +1,5 @@
+<%= form_for @shakespeare_analyzer, url: {action: "create"} do |f| %>
+  <%= label_tag(:url, "Please input the link to your XML file") %>
+  <%= f.text_field :url %>
+  <%= f.submit "Submit" %>
+<% end %>
