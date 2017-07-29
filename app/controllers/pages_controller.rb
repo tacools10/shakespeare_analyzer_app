@@ -8,13 +8,16 @@ class PagesController < ApplicationController
 
   def create
     @shakespeare_analyzer = ShakespeareAnalyzer.new(analyzer_params)
+    @url = @shakespeare_analyzer.url
+    @results = @shakespeare_analyzer.parse_count_sort(@shakespeare_analyzer.get_speakers(@url), @url)
+    render(:partial => 'results', locals: {results: @results})
   end
 
 
   private
 
     def analyzer_params
-        params.require(:shakespeare_analyzer).permit(:url).permit(:totals).permit(:count)
+        params.require(:shakespeare_analyzer).permit(:url, :totals, :speakers)
     end
 
 end

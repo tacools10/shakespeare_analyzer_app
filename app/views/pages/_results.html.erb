@@ -1,0 +1,13 @@
+<h1>Analysis results</h1>
+
+<table border="1">
+  <% results.each do |result|  %>
+    <tr>
+      <td><%= result[0] %> </td>
+      <td><%= result[1] %> </td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "Enter another url", new_page_path %>
+
