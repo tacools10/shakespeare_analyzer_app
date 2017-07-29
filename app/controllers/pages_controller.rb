@@ -6,6 +6,9 @@ class PagesController < ApplicationController
     @shakespeare_analyzer = ShakespeareAnalyzer.new
   end
 
+  # logic of getting the results data is here after creating an instance of the analyzer.
+  # results then get passed to partial
+
   def create
     @shakespeare_analyzer = ShakespeareAnalyzer.new(analyzer_params)
     @url = @shakespeare_analyzer.url

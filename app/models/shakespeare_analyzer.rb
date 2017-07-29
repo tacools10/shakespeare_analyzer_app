@@ -4,6 +4,8 @@ class ShakespeareAnalyzer
   attr_reader :totals, :speakers
   attr_accessor :url
 
+  # adjusted code versus part 1 to avoid getting a blank url on initializing when navigating to "new" view
+
   def initialize(attributes = {})
     super
     @totals = Hash.new
